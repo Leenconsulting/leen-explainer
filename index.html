@@ -385,7 +385,7 @@
       progress.style.width=(vo.duration?(t/vo.duration*100):0)+'%';
       if(!vo.paused && !vo.ended) rafId=requestAnimationFrame(loop);
     }
-    function start(){ resetAll(); vo.currentTime=0; var p=vo.play(); if(p&&p.catch)p.catch(function(){}); var mus=document.getElementById('mus'); if(mus){ mus.currentTime=0; mus.volume=0.15; var mp=mus.play(); if(mp&&mp.catch)mp.catch(function(){}); } if(overlay)overlay.style.display='none'; cancelAnimationFrame(rafId); rafId=requestAnimationFrame(loop); }
+    function start(){ resetAll(); vo.currentTime=0; var p=vo.play(); if(p&&p.catch)p.catch(function(){}); var mus=document.getElementById('mus'); if(mus){ mus.currentTime=0; mus.volume=0.08; var mp=mus.play(); if(mp&&mp.catch)mp.catch(function(){}); } if(overlay)overlay.style.display='none'; cancelAnimationFrame(rafId); rafId=requestAnimationFrame(loop); }
     playbtn.addEventListener('click', start);
     document.getElementById('replay').addEventListener('click', start);
     vo.addEventListener('ended', function(){ progress.style.width='100%'; if(overlay)overlay.style.display='flex'; var mus=document.getElementById('mus'); if(mus){ try{ mus.pause(); }catch(e){} } });
